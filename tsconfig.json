@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "target": "ES6",
+        "declaration": true,
+        "emitDecoratorMetadata": true,
+        "outDir": ".es6",
+        "sourceMap": true
+    },
+    "files": [
+    	"typings/core/lib.core.es6.d.ts",
+    	"typings/node/node.d.ts",
+        "src/stimpack.ts"
+    ]
+}
