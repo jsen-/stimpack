@@ -13,5 +13,5 @@ $ git clone https://github.com/jsen-/stimpack
 $ cd stimpack
 $ npm install
 $ tsd reinstall
-$ npm build
+$ npm run build
 ```
