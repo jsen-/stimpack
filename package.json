@@ -1,6 +1,6 @@
 {
   "name": "stimpack",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Dependency injection based on Angular 2",
   "main": "dist/stimpack.js",
   "scripts": {
@@ -25,8 +25,6 @@
   },
   "homepage": "https://github.com/jsen-/stimpack#readme",
   "devDependencies": {
-    "tsd": "^0.6.1",
-    "babel": "^5.5.3",
     "sorcery": "https://github.com/jsen-/sorcery/tarball/master",
     "typescript-bin": "https://github.com/jsen-/TypeScript-bin/tarball/master"
   }
