@@ -1,6 +1,6 @@
 {
   "name": "stimpack",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Dependency injection based on Angular 2",
   "main": "dist/stimpack.js",
   "scripts": {
