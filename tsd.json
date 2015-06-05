@@ -1,0 +1,15 @@
+{
+  "version": "v4",
+  "repo": "jsen-/typedefs",
+  "ref": "master",
+  "path": "typings",
+  "bundle": "typings/tsd.d.ts",
+  "installed": {
+    "node/node.d.ts": {
+      "commit": "ed54cb6b5150759e1247583142c38ef8236a0688"
+    },
+    "core/lib.core.es6.d.ts": {
+      "commit": "478bbbc013dccc7c9d69e56443d6bf1980e18654"
+    }
+  }
+}
