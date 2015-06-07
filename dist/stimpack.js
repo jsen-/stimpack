@@ -1,31 +1,24 @@
 'use strict';
 
-var _createClass = require('babel-runtime/helpers/create-class')['default'];
-
-var _classCallCheck = require('babel-runtime/helpers/class-call-check')['default'];
-
-var _slicedToArray = require('babel-runtime/helpers/sliced-to-array')['default'];
-
-var _Object$defineProperty = require('babel-runtime/core-js/object/define-property')['default'];
-
-var _Map = require('babel-runtime/core-js/map')['default'];
-
-var _Object$create = require('babel-runtime/core-js/object/create')['default'];
-
-var _getIterator = require('babel-runtime/core-js/get-iterator')['default'];
-
-_Object$defineProperty(exports, '__esModule', {
+Object.defineProperty(exports, '__esModule', {
     value: true
 });
 
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
 exports.Inject = Inject;
+
+function _slicedToArray(arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i['return']) _i['return'](); } finally { if (_d) throw _e; } } return _arr; } else { throw new TypeError('Invalid attempt to destructure non-iterable instance'); } }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
 require('reflect-metadata');
 
 var Injector = (function () {
     function Injector() {
         _classCallCheck(this, Injector);
 
-        this.types = new _Map();
+        this.types = new Map();
         this.types.set(Injector, this);
     }
 
@@ -35,14 +28,14 @@ var Injector = (function () {
             var instance = this.types.get(Type);
             if (!instance) {
                 var params = [];
-                instance = _Object$create(Type.prototype);
+                instance = Object.create(Type.prototype);
                 if (Type.annotations) {
                     var _iteratorNormalCompletion = true;
                     var _didIteratorError = false;
                     var _iteratorError = undefined;
 
                     try {
-                        for (var _iterator = _getIterator(Type.annotations), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+                        for (var _iterator = Type.annotations[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
                             var TargetType = _step.value;
 
                             params.push(this.get(TargetType));
@@ -70,7 +63,7 @@ var Injector = (function () {
                     var _iteratorError2 = undefined;
 
                     try {
-                        for (var _iterator2 = _getIterator(Type.propAnnotations), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+                        for (var _iterator2 = Type.propAnnotations[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
                             var _step2$value = _slicedToArray(_step2.value, 2);
 
                             var propName = _step2$value[0];
@@ -113,7 +106,7 @@ function Inject(target, propertyKey) {
     if (typeof target === 'object') {
         var Type = Reflect.getMetadata('design:type', target, propertyKey);
         var Ctor = target.constructor;
-        var propAnnotations = Ctor.propAnnotations || (Ctor.propAnnotations = new _Map());
+        var propAnnotations = Ctor.propAnnotations || (Ctor.propAnnotations = new Map());
         propAnnotations.set(propertyKey, Type);
     } else {
         target.annotations = Reflect.getMetadata('design:paramtypes', target);
