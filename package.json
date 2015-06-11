@@ -1,14 +1,15 @@
 {
   "name": "stimpack",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Dependency injection based on Angular 2",
   "main": "dist/stimpack.js",
   "scripts": {
-    "build": "npm run build-tsd && npm run build-typescript && npm run build-babel && npm run build-sorcery && node -e \"require('fs').createReadStream('.es6/stimpack.d.ts').pipe(require('fs').createWriteStream('dist/stimpack.d.ts'));\"",
+    "build": "npm run build-tsd && npm run build-typescript && npm run build-babel && npm run build-sorcery && npm run build-dts",
     "build-tsd": "tsd reinstall",
     "build-typescript": "tsc",
     "build-babel": "babel .es6 --out-dir .es5 --source-maps",
     "build-sorcery": "sorcery -i .es5/stimpack.js -o dist/stimpack.js",
+    "build-dts" : "dts-generator --baseDir . --name stimpack --main stimpack/src/stimpack --out dist/stimpack.d.ts --exclude typings/node/node.d.ts --exclude typings/core/lib.core.es6.d.ts typings/core/lib.core.es6.d.ts typings/node/node.d.ts src/stimpack.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -27,7 +28,8 @@
   "homepage": "https://github.com/jsen-/stimpack#readme",
   "devDependencies": {
     "sorcery": "https://github.com/jsen-/sorcery/tarball/master",
-    "typescript": "https://github.com/jsen-/TypeScript-bin/tarball/master"
+    "typescript": "https://github.com/jsen-/TypeScript/tarball/master",
+    "dts-generator": "https://github.com/jsen-/dts-generator/tarball/master"
   },
   "dependencies": {
     "reflect-metadata": "^0.1.0"
