@@ -1,7 +1,6 @@
 {
     "compilerOptions": {
         "target": "ES6",
-        "declaration": true,
         "experimentalDecorators":true,
         "emitDecoratorMetadata": true,
         "outDir": ".es6",
