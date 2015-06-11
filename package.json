@@ -1,10 +1,11 @@
 {
   "name": "stimpack",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Dependency injection based on Angular 2",
   "main": "dist/stimpack.js",
   "scripts": {
-    "build": "npm run build-typescript && npm run build-babel && npm run build-sorcery && node -e \"require('fs').createReadStream('.es6/stimpack.d.ts').pipe(require('fs').createWriteStream('dist/stimpack.d.ts'));\"",
+    "build": "npm run build-tsd && npm run build-typescript && npm run build-babel && npm run build-sorcery && node -e \"require('fs').createReadStream('.es6/stimpack.d.ts').pipe(require('fs').createWriteStream('dist/stimpack.d.ts'));\"",
+    "build-tsd": "tsd reinstall",
     "build-typescript": "tsc",
     "build-babel": "babel .es6 --out-dir .es5 --source-maps",
     "build-sorcery": "sorcery -i .es5/stimpack.js -o dist/stimpack.js",
@@ -26,7 +27,7 @@
   "homepage": "https://github.com/jsen-/stimpack#readme",
   "devDependencies": {
     "sorcery": "https://github.com/jsen-/sorcery/tarball/master",
-    "typescript-bin": "https://github.com/jsen-/TypeScript-bin/tarball/master"
+    "typescript": "https://github.com/jsen-/TypeScript-bin/tarball/master"
   },
   "dependencies": {
     "reflect-metadata": "^0.1.0"
