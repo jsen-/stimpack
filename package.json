@@ -5,7 +5,7 @@
   "main": "dist/stimpack.js",
   "scripts": {
     "build": "npm run build-tsd && npm run build-typescript && npm run build-babel && npm run build-sorcery && npm run build-dts",
-    "build-tsd": "tsd reinstall",
+    "build-tsd": "tsd reinstall --save --overwrite",
     "build-typescript": "tsc",
     "build-babel": "babel .es6 --out-dir .es5 --source-maps",
     "build-sorcery": "sorcery -i .es5/stimpack.js -o dist/stimpack.js",
@@ -37,6 +37,6 @@
   "typescript": {
     "definitions": [
       "dist/stimpack.d.ts"
-   ]
+    ]
   }
 }
