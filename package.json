@@ -33,5 +33,10 @@
   },
   "dependencies": {
     "reflect-metadata": "^0.1.0"
+  },
+  "typescript": {
+    "definitions": [
+      "dist/stimpack.d.ts"
+   ]
   }
 }
