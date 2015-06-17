@@ -1,3 +1,4 @@
+/// <reference path="../typings/tsd.d.ts" />
 require('reflect-metadata');
 
 export interface Annotable extends Function {
